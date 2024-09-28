@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname  = "X'el_Track";
+$dbname  = "xel_track";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
