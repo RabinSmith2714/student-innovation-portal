@@ -21,10 +21,11 @@
     <link href="assets/libs/flot/css/float-chart.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
 
-    <!-- dashboard -->
-    <link rel="icon" href="assets/images/favicon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
     <style>
         .nav-tabs .nav-link {
             color: #0033cc;
@@ -38,9 +39,8 @@
         th {
             background-color: #7460ee;
             background: linear-gradient(to bottom right, #cc66ff 1%, #0033cc 100%);
-            color: white;
-        }
-
+            color: blue;
+        } 
         /* Fix the footer at the bottom */
         .footer {
             position: fixed;
@@ -288,210 +288,231 @@
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Container fluid  -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Sales Cards  main page content-->
-                <!-- ============================================================== -->
+            <div class="container-fluid mt-4">
+                <!-- Main Card -->
                 <div class="card">
-                    <div class="card-body wizard-content">
-                        <h4 class="card-title">hi</h4>
-                        <h6 class="card-subtitle"></h6>
-                        <div class="card">
-                            <ul class="nav nav-tabs mb-3" role="tablist">
+                    <div class="card-body">
+                        <!-- Tabs Navigation -->
+                        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="guidelines-tab" data-bs-toggle="tab" data-bs-target="#guidelines" type="button" role="tab" aria-controls="guidelines" aria-selected="true">
+                                    <i class="bi bi-people-fill"></i> <b>Guidelines</b>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="records-tab" data-bs-toggle="tab" data-bs-target="#records" type="button" role="tab" aria-controls="records" aria-selected="false">
+                                    <i class="bi bi-people-fill"></i> <b>View Records</b>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="mentor-tab" data-bs-toggle="tab" data-bs-target="#mentor" type="button" role="tab" aria-controls="mentor" aria-selected="false">
+                                    <i class="bi bi-house-door-fill"></i> <b>Mentor</b>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="problem-tab" data-bs-toggle="tab" data-bs-target="#problem" type="button" role="tab" aria-controls="problem" aria-selected="false">
+                                    <i class="bi bi-house-door-fill"></i> <b>Problem Statements</b>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="ongoing-tab" data-bs-toggle="tab" data-bs-target="#ongoing" type="button" role="tab" aria-controls="ongoing" aria-selected="false">
+                                    <i class="bi bi-house-door-fill"></i> <b>Ongoing Statements</b>
+                                </button>
+                            </li>
+                        </ul>
 
-                                <li class="nav-item">
-                                    <a class="nav-link active show" data-toggle="tab"  role="tab" aria-selected="false">
-                                        <span class="hidden-sm-up"></span>
-                                        <span class="hidden-xs-down">
-                                            <i class="bi bi-people-fill"></i>
-                                            <b>Guidelines</b>
-                                        </span>
-                                    </a>
-                                </li>
+                        <!-- Tabs Content -->
+                        <div class="tab-content" id="myTabContent">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#records" role="tab" aria-selected="false">
-                                        <span class="hidden-sm-up"></span>
-                                        <span class="hidden-xs-down">
-                                            <i class="bi bi-people-fill"></i>
-                                            <b>View Records</b>
-                                        </span>
-                                    </a>
-                                </li>
+                            <!-- Guidelines Tab Pane -->
+                            <div class="tab-pane fade show active" id="guidelines" role="tabpanel" aria-labelledby="guidelines-tab">
+                                <div class="p-4">
+                                    <h5>Guidelines</h5>
+                                    <p>Here you can place your guidelines content.</p>
+                                    <!-- Add your guidelines content here -->
+                                </div>
+                            </div>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#mentor" role="tab">
-                                        <span class="hidden-sm-up"></span>
-                                        <span class="hidden-xs-down">
-                                            <i class="bi bi-house-door-fill"></i>
-                                            <b>Mentor</b>
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#problem" role="tab">
-                                        <span class="hidden-sm-up"></span>
-                                        <span class="hidden-xs-down">
-                                            <i class="bi bi-house-door-fill"></i>
-                                            <b>Problem Statements</b>
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#ongoing" role="tab">
-                                        <span class="hidden-sm-up"></span>
-                                        <span class="hidden-xs-down">
-                                            <i class="bi bi-house-door-fill"></i>
-                                            <b>Ongoing_statements</b>
-                                        </span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- Tab page starts -->
-                            <div class="tab-content tabcontent-border">
-                                <!-- view records table -->
-                                <div class="tab-pane p-20" id="records" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <!-- Add table-responsive class here -->
-                                            <div class="table-responsive">
-                                                <table id="ProgressTable" class="table table-bordered table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th><b>S.No</b></th>
-                                                            <th><b>Category</b></th>
-                                                            <th><b>uploaded date</b></th>
-                                                            <th><b>Score</b></th>
-                                                            <th><b>view</b></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <!-- End of table-responsive div -->
-                                        </div>
+                            <!-- View Records Tab Pane -->
+                            <div class="tab-pane fade" id="records" role="tabpanel" aria-labelledby="records-tab">
+                                <div class="p-4">
+                                    <div class="d-flex justify-content-end mb-3">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recordModal">
+                                            <i class="bi bi-plus-circle"></i> Add Details
+                                        </button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table id="recordsTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th>Category</th>
+                                                    <th>Uploaded Date</th>
+                                                    <th>Score</th>
+                                                    <th>Link</th>
+                                                    <th>View</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Patent</td>
+                                                    <td>2024-09-28</td>
+                                                    <td>90</td>
+                                                    <td><a href="#" target="_blank">View Link</a></td>
+                                                    <td><button class="btn btn-info btn-sm">View</button></td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                                <!-- mentor table -->
-                                <div class="tab-pane p-20" id="mentor" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <!-- Add table-responsive class here -->
-                                            <div class="table-responsive">
-                                                <table id="ProgressTable" class="table table-bordered table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th><b>S.No</b></th>
-                                                            <th><b>Date </b></th>
-                                                            <th><b>points discussed</b></th>
-                                                            <th><b>suggestion given</b></th>
-                                                            <th><b>Action taken</b></th>
-                                                            <th><b>Status</b></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <!-- End of table-responsive div -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- problem statements table -->
-                                <div class="tab-pane p-20" id="problem" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <!-- Add table-responsive class here -->
-                                            <div class="table-responsive">
-                                                <table id="ProgressTable" class="table table-bordered table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th><b>S.No</b></th>
-                                                            <th><b>problem id</b></th>
-                                                            <th><b>problem title</b></th>
-                                                            <th><b>Description</b></th>
-                                                            <th><b>faculty Name</b></th>
-                                                            <th><b>given date </b></th>
-                                                            <th><b>last date</b></th>
-                                                            <th><b>Action</b></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <!-- End of table-responsive div -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- ongoing statements table -->
-                                <div class="tab-pane p-20" id="ongoing" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <!-- Add table-responsive class here -->
-                                            <div class="table-responsive">
-                                                <table id="ProgressTable" class="table table-bordered table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th><b>S.No</b></th>
-                                                            <th><b>problem id</b></th>
-                                                            <th><b>problem title</b></th>
-                                                            <th><b>problem description</b></th>
-                                                            <th><b>last date</b></th>
-                                                            <th><b>Status</b></th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <!-- End of table-responsive div -->
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
 
+                            <!-- Mentor Tab Pane -->
+                            <div class="tab-pane fade" id="mentor" role="tabpanel" aria-labelledby="mentor-tab">
+                                <div class="p-4">
+                                    <div class="table-responsive">
+                                        <table id="mentorTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th>Date</th>
+                                                    <th>Points Discussed</th>
+                                                    <th>Suggestions Given</th>
+                                                    <th>Action Taken</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2024-09-20</td>
+                                                    <td>Project Scope</td>
+                                                    <td>Refined objectives</td>
+                                                    <td>Updated project plan</td>
+                                                    <td>Completed</td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Problem Statements Tab Pane -->
+                            <div class="tab-pane fade" id="problem" role="tabpanel" aria-labelledby="problem-tab">
+                                <div class="p-4">
+                                    <div class="table-responsive">
+                                        <table id="problemTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th>Problem ID</th>
+                                                    <th>Problem Title</th>
+                                                    <th>Description</th>
+                                                    <th>Faculty Name</th>
+                                                    <th>Given Date</th>
+                                                    <th>Last Date</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>P-001</td>
+                                                    <td>Data Analysis</td>
+                                                    <td>Analyze dataset for trends.</td>
+                                                    <td>Dr. Smith</td>
+                                                    <td>2024-09-15</td>
+                                                    <td>2024-10-15</td>
+                                                    <td><button class="btn btn-warning btn-sm">Edit</button></td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ongoing Statements Tab Pane -->
+                            <div class="tab-pane fade" id="ongoing" role="tabpanel" aria-labelledby="ongoing-tab">
+                                <div class="p-4">
+                                    <div class="table-responsive">
+                                        <table id="ongoingTable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th>Problem ID</th>
+                                                    <th>Problem Title</th>
+                                                    <th>Description</th>
+                                                    <th>Last Date</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>P-002</td>
+                                                    <td>System Optimization</td>
+                                                    <td>Improve system performance.</td>
+                                                    <td>2024-11-01</td>
+                                                    <td>In Progress</td>
+                                                </tr>
+                                                <!-- Add more rows as needed -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <!-- End of tab-content -->
+                    </div> <!-- End of card-body -->
+                </div> <!-- End of card -->
+            </div> <!-- End of container-fluid -->
+
+            <!-- Add Record Modal -->
+            <div class="modal fade" id="recordModal" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form id="addRecordForm" enctype="multipart/form-data">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="recordModalLabel">Add Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="category" class="form-label">Category</label>
+                                    <select class="form-select" name="category" id="category" required>
+                                        <option value="" disabled selected>Select</option>
+                                        <option value="PATENT">Patent</option>
+                                        <option value="PROJECTS">Projects</option>
+                                        <option value="GRANTS">Grants</option>
+                                        <option value="INTERNSHIP">Internship</option>
+                                        <option value="RESEARCH">Research</option>
+                                        <option value="PRIZE-WINNING">Prizes</option>
+                                        <option value="CONFERENCE">Conference</option>
+                                        <option value="CERTIFICATE">Certificate</option>
+                                        <option value="ACADEMIC">Academics</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="image" class="form-label">Image</label>
+                                    <input type="file" class="form-control" name="image" id="image" accept="image/*" required onchange="validateSize(this)">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="links" class="form-label">Links</label>
+                                    <input type="url" class="form-control" name="links" id="links" placeholder="Enter link" required />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
+            </div> <!-- End of Add Record Modal -->
             <footer class="footer text-center">X'el_Track</footer>
         </div>
     </div>
@@ -512,6 +533,35 @@
     <script src="dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="dist/js/custom.min.js"></script>
+    <!-- jQuery (necessary for DataTables) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <!-- Initialize DataTable -->
+    <script>
+        $(document).ready(function() {
+            $('#ProgressTable').DataTable(); // Initialize the DataTable
+        });
+    </script>
+    <!-- set date as today -->
+    <script>
+        var today = new Date().toISOString().split('T')[0];
+        var dateInput = document.getElementById('uploaded_date');
+        dateInput.setAttribute('min', today);
+        dateInput.setAttribute('max', today);
+        dateInput.value = today;
+    </script>
+    <!-- data table -->
+    <script>
+         $(document).ready(function() {
+            $('#recordsTable').DataTable();
+            $('#mentorTable').DataTable();
+            $('#problemTable').DataTable();
+            $('#ongoingTable').DataTable();
+        });
+    </script>
 </body>
 
 </html>
